@@ -27,7 +27,7 @@ namespace ReactBase.Controllers
             return View();
         }
 
-        public IActionResult About()5
+        public IActionResult About()
         {
             ViewData["Message"] = "Your application description page.";
 

@@ -32,9 +32,10 @@ namespace DapperCodeGenerator.SqlQueries
                     }
 
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
-
+                    connection.Close();
+                    throw;
                 }
             }
 

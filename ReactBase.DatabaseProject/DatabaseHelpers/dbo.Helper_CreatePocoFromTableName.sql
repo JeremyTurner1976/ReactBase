@@ -48,7 +48,7 @@ Select PropertyColumn from(
             WHEN DATA_TYPE = 'bit' AND IS_NULLABLE = 'YES' THEN 'bool?'
             WHEN DATA_TYPE = 'xml' THEN 'string'
         END AS NewType
-        FROM [information_schema].[columns]
+        FROM [master].[INFORMATION_SCHEMA].[COLUMNS]
         WHERE TABLE_NAME = @tableName
         ORDER BY ORDINAL_POSITION
         ) AS a1

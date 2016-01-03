@@ -1,4 +1,4 @@
 ﻿CREATE PROCEDURE [dbo].[Helper_GetDatabaseTableNames]
 AS
-SELECT TABLE_NAME FROM [information_schema].[tables]
+SELECT TABLE_NAME FROM [ReactBase.Database].[INFORMATION_SCHEMA].[TABLES]
 

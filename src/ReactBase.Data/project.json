@@ -4,7 +4,8 @@
   "frameworks": {
     "net451": {
       "frameworkAssemblies": {
-        "System.Data": "4.0.0.0"
+        "System.Data": "4.0.0.0",
+        "System.Reflection": "4.0.0.0"
       }
     },
     "dotnet5.4": {

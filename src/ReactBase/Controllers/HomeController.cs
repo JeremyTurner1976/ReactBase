@@ -20,7 +20,7 @@ namespace ReactBase.Controllers
         {
             return View();
         }
-        4
+
         public IActionResult ReactIndex()
         {
             var test = Repository.GetAllErrors();

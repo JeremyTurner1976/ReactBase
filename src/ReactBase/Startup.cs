@@ -7,6 +7,7 @@ using Microsoft.AspNet.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using ReactBase.Data;
 
 namespace ReactBase
 {
@@ -36,6 +37,10 @@ namespace ReactBase
             services.AddApplicationInsightsTelemetry(Configuration);
 
             services.AddMvc();
+
+            //Application Services
+            services.AddTransient<Repository>();
+            //AddScoped also
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

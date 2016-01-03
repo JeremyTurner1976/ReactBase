@@ -20,13 +20,14 @@ namespace ReactBase.Controllers
         {
             return View();
         }
-
+        4
         public IActionResult ReactIndex()
         {
+            var test = Repository.GetAllErrors();
             return View();
         }
 
-        public IActionResult About()
+        public IActionResult About()5
         {
             ViewData["Message"] = "Your application description page.";
 

@@ -50,6 +50,7 @@
     <Compile Include="Abstract\AbstractCodeGenerator.cs" />
     <Compile Include="Abstract\AbstractQuery.cs" />
     <Compile Include="Abstract\ErrorHandler.cs" />
+    <Compile Include="Extensions\StringExtensions.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\DataProjectCodeGenerator.cs" />

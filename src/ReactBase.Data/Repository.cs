@@ -1,10 +1,12 @@
-﻿using System;
+﻿
+
+
+using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
-using System.Threading.Tasks;
-
+using ReactBase.Data.TableModels;
+using Dapper;
 
 namespace ReactBase.Data
 {
@@ -22,6 +24,26 @@ namespace ReactBase.Data
         {
             return "Pong";
         }
-       
+
+        public List<Error> GetAllErrors()
+        {
+            List<Error> errors;
+            using (var connection = new SqlConnection(ConnectionString))
+            {
+                try
+                {
+                    connection.Open();
+                    errors = connection.Query<Error>("Select * from dbo.Errors").ToList();
+                }
+                catch (Exception)
+                {
+                    connection.Close();
+                    throw;
+                }
+            }
+            return errors;
+        }
+
+
     }
 }

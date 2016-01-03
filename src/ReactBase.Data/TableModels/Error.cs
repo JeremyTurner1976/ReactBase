@@ -3,10 +3,12 @@
 using System;
 using ReactBase.Data.Abstract;
 namespace ReactBase.Data.TableModels{
-public class Users : ModelBase {
+public class Error : ModelBase {
+public DateTime CreatedDateTime {get;set;}
 public int Id {get;set;}
-public string DisplayName {get;set;}
-public string Email {get;set;}
-public string Password {get;set;}
-} // class Users
+public int UserId {get;set;}
+public string Message {get;set;}
+public string Source {get;set;}
+public string StackTrace {get;set;}
+} // class Errors
 }

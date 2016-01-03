@@ -3,11 +3,10 @@
 using System;
 using ReactBase.Data.Abstract;
 namespace ReactBase.Data.TableModels{
-public class ChatMessages : ModelBase {
-public DateTime CreatedDateTime {get;set;}
-public DateTime? EditedDateTime {get;set;}
+public class User : ModelBase {
 public int Id {get;set;}
-public int UserId {get;set;}
-public string Content {get;set;}
-} // class ChatMessages
+public string DisplayName {get;set;}
+public string Email {get;set;}
+public string Password {get;set;}
+} // class Users
 }

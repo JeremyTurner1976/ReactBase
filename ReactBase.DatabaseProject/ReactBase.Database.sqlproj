@@ -61,13 +61,15 @@
   <ItemGroup>
     <Folder Include="Properties" />
     <Folder Include="DatabaseHelpers" />
+    <Folder Include="Tables" />
   </ItemGroup>
   <ItemGroup>
-    <Build Include="Errors.sql" />
-    <Build Include="ChatMessages.sql" />
-    <Build Include="Users.sql" />
     <Build Include="DatabaseHelpers\dbo.Helper_CreatePocoFromTableName.sql" />
     <Build Include="DatabaseHelpers\dbo.Helper_GetDatabaseTableNames.sql" />
+    <Build Include="Tables\ChatMessages.sql" />
+    <Build Include="Tables\Errors.sql" />
+    <Build Include="Tables\Users.sql" />
+    <Build Include="DatabaseHelpers\dbo.Helpers_CleanTablesAndFillTestData.sql" />
   </ItemGroup>
   <ItemGroup>
     <ArtifactReference Include="$(DacPacRootPath)\Extensions\Microsoft\SQLDB\Extensions\SqlServer\100\SqlSchemas\master.dacpac">

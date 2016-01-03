@@ -1,12 +1,13 @@
 ﻿CREATE PROCEDURE [dbo].[Helper_CreatePocoFromTableName]    
-@tableName varchar(100)
+@tableName varchar(100),
+@singularTableName varchar(100)
 AS
 BEGIN
 SET NOCOUNT ON;
 
 -- Subquery to return only the copy paste text
 Select PropertyColumn from(
-    SELECT 1 as rowNr, 'public class ' + @tableName + ' : ModelBase {' as PropertyColumn
+    SELECT 1 as rowNr, 'public class ' + @singularTableName + ' : ModelBase {' as PropertyColumn
     UNION
     SELECT 2 as rowNr, 'public ' + a1.NewType + ' ' + a1.COLUMN_NAME + ' {get;set;}' as PropertyColumn
     -- ,* comment added so that i get copy pasteable output
@@ -48,7 +49,7 @@ Select PropertyColumn from(
             WHEN DATA_TYPE = 'bit' AND IS_NULLABLE = 'YES' THEN 'bool?'
             WHEN DATA_TYPE = 'xml' THEN 'string'
         END AS NewType
-        FROM [master].[INFORMATION_SCHEMA].[COLUMNS]
+        FROM [ReactBase.Database].[INFORMATION_SCHEMA].[COLUMNS]
         WHERE TABLE_NAME = @tableName
         ORDER BY ORDINAL_POSITION
         ) AS a1

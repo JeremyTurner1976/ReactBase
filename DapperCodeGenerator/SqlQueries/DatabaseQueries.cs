@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Dapper;
 using DapperCodeGenerator.Abstract;
+using DapperCodeGenerator.Extensions;
 
 namespace DapperCodeGenerator.SqlQueries
 {
@@ -24,11 +25,13 @@ namespace DapperCodeGenerator.SqlQueries
                 {
                     connection.Open();
                     var tableNameList = connection.Query<string>(GetTableNamesProc, commandType: CommandType.StoredProcedure).ToList();
-                    foreach (var item in tableNameList)
+                    foreach (var tableName in tableNameList)
                     {
+                        var singularTableName = tableName.Singularize();
                         var dynamicParameters = new DynamicParameters();
-                        dynamicParameters.Add("tableName", item);
-                        returnDictionary.Add(item, connection.Query<string>(GetTableClassesProc, dynamicParameters, commandType: CommandType.StoredProcedure).ToList());
+                        dynamicParameters.Add("tableName", tableName);
+                        dynamicParameters.Add("singularTableName", singularTableName);
+                        returnDictionary.Add(tableName, connection.Query<string>(GetTableClassesProc, dynamicParameters, commandType: CommandType.StoredProcedure).ToList());
                     }
 
                 }

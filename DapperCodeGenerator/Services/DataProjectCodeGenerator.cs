@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DapperCodeGenerator.Abstract;
+using DapperCodeGenerator.Extensions;
 using DapperCodeGenerator.SqlQueries;
 
 namespace DapperCodeGenerator.Services
@@ -30,7 +31,7 @@ namespace DapperCodeGenerator.Services
                     stringBuilder.AppendLine(fileLine);
                 }
                 stringBuilder.AppendLine("}");
-                fileHandler.GenerateNewFile(TableModelsLocation, item.Key, "cs", stringBuilder.ToString());
+                fileHandler.GenerateNewFile(TableModelsLocation, item.Key.Singularize(), "cs", stringBuilder.ToString());
             }
         }
     }

@@ -43,6 +43,9 @@ namespace ReactBase.Controllers
 
         public IActionResult Error()
         {
+            //This works perfectly, will want to keep Controllers in a try/catch
+            //We will log the exception to the DB and keep the current output if in Dev Mode
+            //Will show a more basic view if in non Dev Mode (do not want to show details - vulnerability)
             return View();
         }
     }

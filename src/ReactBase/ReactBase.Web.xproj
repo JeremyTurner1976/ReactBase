@@ -15,6 +15,9 @@
     <SchemaVersion>2.0</SchemaVersion>
   </PropertyGroup>
   <ItemGroup>
+    <DnxInvisibleContent Include=".editorconfig" />
+    <DnxInvisibleContent Include=".jshintrc" />
+    <DnxInvisibleContent Include=".travis.yml" />
     <DnxInvisibleContent Include="bower.json" />
     <DnxInvisibleContent Include=".bowerrc" />
     <DnxInvisibleContent Include="package.json" />
